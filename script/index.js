@@ -1,4 +1,3 @@
-// Heart icon click
 let counter = 0;
 const heartButtons = document.getElementsByClassName('heart-btn')
 for(let button of heartButtons){
@@ -14,23 +13,18 @@ const getId= (id)=>{
     return getId.trim();
 }
 
-//call history create
 //call history create 
 let callHistoryData =[];
-// card-box season
-document.getElementById('call-btn').addEventListener('click', ())=>{
 // card-box season //QuerySelector Use
 const callButtons = document.querySelectorAll('.call-btn');
 for(const button of callButtons){
-    button.addEventListener('click',())=>{
+    button.addEventListener('click',()=>{
     const card = button.closest('.card');
     const serviceName = card.querySelector('.card-title').textContent.trim();
     const serviceNumber = card.querySelector('.call-number').textContent.trim();
-    }
+
 
     const coin =parseInt(getId('coin-count'));
-    const serviceName =getId("service-name");
-    const serviceNumber =getId("service-number");
     const digit = 20;
     const coinElement =document.getElementById('coin-count');
     if(coin >= digit){
@@ -49,7 +43,7 @@ for(const button of callButtons){
     callHistoryData.push(data);  
     // history submit
     updateCallHistory();
-}
+})
 }
 
 // function update call history data
@@ -77,3 +71,23 @@ document.getElementById('clear-call').addEventListener('click',()=>{
     callHistoryData = [];
     updateCallHistory();
 })
+
+// Copy Button
+let counterCopy = 0;
+const copyButtons = document.getElementsByClassName('copy-btn');
+
+for (let button of copyButtons) {
+    button.addEventListener('click', () => {
+        const card = button.closest('.card');
+        const textCopy = card.querySelector('.call-number').textContent;
+        counterCopy += 1;
+        document.getElementById('copy-count').textContent = counterCopy;
+        navigator.clipboard.writeText(textCopy)
+        .then(() => {
+            alert("Text copied to clipboard: " + textCopy);
+        })
+        .catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+});
+}
