@@ -18,15 +18,15 @@ const getId= (id)=>{
 //call history create 
 let callHistoryData =[];
 // card-box season
-document.getElementById('call-btn').addEventListener('click', ()=>{
+document.getElementById('call-btn').addEventListener('click', ())=>{
 // card-box season //QuerySelector Use
 const callButtons = document.querySelectorAll('.call-btn');
 for(const button of callButtons){
-    button.addEventListener('click',()=>{
+    button.addEventListener('click',())=>{
     const card = button.closest('.card');
     const serviceName = card.querySelector('.card-title').textContent.trim();
     const serviceNumber = card.querySelector('.call-number').textContent.trim();
-
+    }
 
     const coin =parseInt(getId('coin-count'));
     const serviceName =getId("service-name");
@@ -49,7 +49,7 @@ for(const button of callButtons){
     callHistoryData.push(data);  
     // history submit
     updateCallHistory();
-})
+}
 }
 
 // function update call history data
