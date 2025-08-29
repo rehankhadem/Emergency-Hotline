@@ -3,8 +3,7 @@
 Answer:
 getElementById("id") -> Selects only one element by its id. (id is always unique).
 getElementsByClassName("class") -> Selects all elements with that class name. It returns a list (HTMLCollection).
-querySelector("selector") -> Selects the first element that matches a CSS selector (id, class, tag, etc.).
-querySelectorAll("selector") -> Selects all elements that match a CSS selector. It returns a NodeList.
+querySelector("selector") -> Selects the first element that matches a CSS selector (id, class, tag, etc.).querySelectorAll("selector") -> Selects all elements that match a CSS selector. It returns a NodeList.
 
 
 2. How do you **create and insert a new element into the DOM**?
